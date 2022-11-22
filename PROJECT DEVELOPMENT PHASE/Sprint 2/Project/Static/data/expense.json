@@ -1,0 +1,44 @@
+{
+    "type": "expense",
+    "count": 5,
+    "categories" : [
+        {
+            "value": "home",
+            "text": "Home"
+        },{
+            "value": "personal",
+            "text": "Personal"
+        },{
+            "value": "entertainment",
+            "text":"Entertainment🎬"         
+        },{
+            "value": "healthcare",
+            "text": "Healthcare🏋️‍♂️"
+        },{
+            "value": "other",
+            "text": "Others💰"
+        }        
+    ]    
+}{
+         "type": "expense",
+    "count": 5,
+    "categories" : [
+        {
+            "value": "home",
+            "text": "Home"
+        },{
+            "value": "personal",
+            "text": "Personal"
+        },{
+            "value": "entertainment",
+            "text":"Entertainment🎬"         
+        },{
+            "value": "healthcare",
+            "text": "Healthcare🏋️‍♂️"
+        },{
+            "value": "other",
+            "text": "Others💰"
+        }        
+    ] 
+    
+} 

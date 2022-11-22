@@ -1,0 +1,25 @@
+{
+    "type": "income",
+    "count": 6,
+    "categories" : [
+        {
+            "value": "allowance",
+            "text": "Allowance🗓"
+        },{
+            "value": "awards",
+            "text": "Awards🏅"
+        },{
+            "value": "bonus",
+            "text": "Bonus🍾"
+        },{
+            "value": "salary",
+            "text": "Salary💳"
+       },{
+            "value": "investment",
+            "text": "Investment📈"
+        },{
+            "value": "others",
+            "text": "Others💸"    
+        }
+    ]    
+} 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/home.css">
+    <script src="https://kit.fontawesome.com/514548070d.js" crossorigin="anonymous"></script>
+{#    <script src="../static/script.js"></script>#}
+    <title>Personal Expense Tracker</title>
+</head>
+<body>
+        </div>
+        <hr class="solid-line">
+        <div class="track-items"
+    </div>
+
+    <div class="track-right">
+        <div class="track-right__top">
+            <div class="track-right__top__types">
+                <i class="fa-solid fa-bed fa-2x"></i>
+                <span class="track-type__amount">₹300</span>
+                <span>Home</span>
+            </div>
+            <div class="track-right__top__types">
+                <i class="fa-solid fa-house fa-2x"></i>
+                <span class="track-type__amount">₹300</span>
+                <span>Personal</span>
+            </div>
+            <div class="track-right__top__types">
+                <i class="fa-solid fa-graduation-cap fa-2x"></i>
+                <span class="track-type__amount">₹300</span>
+                <span>Entertainment</span>
+            </div>
+            <div class="track-right__top__types">
+                <i class="fa-solid fa-piggy-bank fa-2x"></i>
+                <span class="track-type__amount">₹300</span>
+                <span>Health care</span>
+            </div>
+            <div class="track-right__top__types">
+                <i class="fa-solid fa-money-check-dollar fa-2x"></i>
+                <span class="track-type__amount">₹300</span>
+                <span>Others</span>
+            </div>
+        </div>
+        <div class="track-right__bottom">
+            <div class="track-transactions">
+            <h3>Last Transactions</h3>
+                <div class="transact-header">
+                    <span class="date-header"><b>Date</b></span>
+                    <span class="transaction-header"><b>Transaction</b></span>
+                    <span class="type-header"><b>Type</b></span>
+                    <span class="amount-header"><b>Amount</b></span>
+                </div>
+            <div class="total-items">
+                {% for i in range(5) %}
+                <div class="transact-item">
+                    <span class="date-header">12/05/2022</span>
+                    <span class="transaction-header">Groceries </span>
+                    <div class="type-header">Homediv>
+                    <span class="amount-header">₹3500</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            </div>
+            <div class="track-add">
+                <h3>Add Expenditure</h3>
+                <form action="/add-expenditure" method="post">
+                    <div class="expenditure-input">
+                        <input name="transaction" placeholder="Transaction" type="text">
+                    </div>
+                    <div class="expenditure-input">
+                        <input name="type" placeholder="Transaction Type" type="text" list="trans-type">
+                        <datalist id="trans-type">
+                            <option value="Home ">
+                            <option value="Personal ">
+                            <option value="Entertainment" >
+                            <option value="Health care" >
+                            <option value="Others" >
+                        </datalist>
+                    </div>
+                    <div class="expenditure-input">
+                        <input name="amount" placeholder="Amount" type="number" min="0">
+                    </div>
+                    <div class="expenditure-input">
+                        <input name="date" placeholder="Date" type="date">
+                    </div>
+                    <button type="submit" class="btn-submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+  

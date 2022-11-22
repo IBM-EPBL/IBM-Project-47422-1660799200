@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #F6F9FE;
+}
+
+.log-box {
+    display: flex;
+    margin: 4rem 3.5rem;
+    height: 79vh;
+}
+
+.log-box__left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #F1ABB9;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-box__left__child {
+    height: 80%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    /*color: white;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.log-box__right {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.log-box__right_welcome {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+
+}
+
+.log-box__right_welcome__text {
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+}
+
+.form_label {
+    font-weight: bold;
+}
+
+input[type=text], input[type=password], select {
+    box-sizing: border-box;
+    padding: 0.9rem 0.5rem 0.9rem 0.5rem;
+    display: inline-block;
+    border: 2px solid rgba(241, 171, 185, 0.25);
+    border-radius: 0.5rem;
+    background-color: rgba(241, 171, 185, 0.25);
+    font-size: 1rem;
+    width: 17rem;
+    margin-bottom: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #F1ABB9;
+}
+
+input:hover {
+    border: 2px solid #F1ABB9;
+}
+
+
+.login-btn {
+    width: 100%;
+    align-self: center;
+    background-color: #F1ABB9;
+    border: none;
+    margin: 0.7rem 0 1rem 0;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: rgba(241, 171, 185, 0.75);
+}
+
+.reg__login__shift {
+    margin-left: 5rem;
+}
+
+.reg__login__shift > a {
+    color: #f594a6;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}

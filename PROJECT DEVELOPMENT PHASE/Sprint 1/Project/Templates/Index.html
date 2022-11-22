@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>
+        {% if page=="login" %}
+            Login | Personal Expense Tracker
+        {% else %}
+            Register | Personal Expense Tracker
+        {% endif %}
+    </title>
+</head>
+<body>
+    <div class="log-box">
+        <div class="log-box__left">
+            <div class="log-box__left__child">
+                <h1>Personal Expense Tracker</h1>
+            </div>
+        </div>
+        <div class="log-box__right">
+            <span class="log-box__right_welcome">Hey, Hello👋</span>
+            {% if page == "login" %}
+            <span class="log-box__right_welcome__text">Enter the information you entered while registering</span>
+            <form action="/login" method="post">
+                <span class="form_label">Email</span>
+                <input name="email" type="text">
+                <span class="form_label">Password</span>
+                <input name="password" type="password">
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <span class="reg__login__shift">Don't have an account? <a href={{ url_for('main', query="register") }}>Register</a></span>
+
+            {% else %}
+            <span class="log-box__right_welcome__text">Enter your details to create an account</span>
+            <form action="/create-account" method="post">
+                <span class="form_label">Name</span>
+                <input name="name" type="text">
+                <span class="form_label">Email</span>
+                <input name="email" type="text">
+                <span class="form_label">Password</span>
+                <input name="password" type="password">
+                <button type="submit" class="login-btn">Register</button>
+            </form>
+            <span class="reg__login__shift">Already a member? <a href={{ url_for('main', query="login") }}>Login</a></span>
+
+            {% endif %}
+            {% if info != "" %}
+                <span style="color: red; margin-top: 1rem; margin-left: 5rem">{{ info }}</span>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

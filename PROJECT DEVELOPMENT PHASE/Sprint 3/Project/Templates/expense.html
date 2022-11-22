@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/expenses.css">
+    <script src="https://kit.fontawesome.com/514548070d.js" crossorigin="anonymous"></script>
+    <title>Personal Expense Tracker</title>
+</head>
+<body>
+    <div class="expenses-home">
+        <header>
+            <span>Expense Tracker</span>
+            <div class="expenses-home__profile">
+                <img src="../static/profile.png" alt="profile">
+                <i class="fa-solid fa-arrow-right-from-bracket" onclick="window.location.href='{{ url_for('logout') }}'" style="cursor: pointer"></i>
+            </div>
+        </header>
+        <div class="expenses-home__content">
+            <div class="expenses-left">
+                <span class="expenses-left__header">Manage your expenses easily with <b>Expense Tracker</b></span>
+                <form action="/add" method="post">
+                    <div class="expenses-form-top">
+                        <div class="expenses-form-top__left">
+                            <span class="form_label">Expense Type</span>
+                            <select name="type">
+                                <option value="null">Select a Type</option>
+                                <option value="Home">Home</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Health Care">Health Care</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                        <div class="expenses-form-top__right">
+                            <span class="form_label">Date</span>
+                            <input name="date" type="date">
+                        </div>
+                    </div>
+                    <div class="expenses-form-bottom">
+                        <div class="expenses-form-bottom__left">
+                            <span class="form_label">Expense</span>
+                            <input name="expense" type="text">
+                        </div>
+                        <div class="expenses-form-bottom__right">
+                            <span class="form_label">Amount</span>
+                            <input name="amount" type="number" min="0">
+                        </div>
+                    </div>
+                    <button type="submit" class="add-btn">Add Expense</button>
+                </form>
+            </div>
+            <div class="expenses-home-split"></div>
+            <div class="expenses-right">
+                <div class="expenses-right-top">
+                    <div class="expenses-list">
+                        <span style="margin-bottom: 0.4rem; font-weight: bold; font-size: 1.25rem">Home</span>
+                        <span style="font-weight: bold">₹{{ expenses_amount[0] }}</span>
+                    </div>
+                    <div class="expenses-home-split"></div>
+                    <div class="expenses-list">
+                        <span style="margin-bottom: 0.4rem; font-weight: bold; font-size: 1.25rem">Personal</span>
+                        <span style="font-weight: bold">₹{{ expenses_amount[1] }}</span>
+                    </div>
+                    <div class="expenses-home-split"></div>
+                    <div class="expenses-list">
+                        <span style="margin-bottom: 0.4rem; font-weight: bold; font-size: 1.25rem">Entertainment</span>
+                        <span style="font-weight: bold">₹{{ expenses_amount[2] }}</span>
+                    </div>
+                    <div class="expenses-home-split"></div>
+                    <div class="expenses-list">
+                        <span style="margin-bottom: 0.4rem; font-weight: bold; font-size: 1.25rem">Health Care</span>
+                        <span style="font-weight: bold">₹{{ expenses_amount[3] }}</span>
+                    </div>
+                    <div class="expenses-home-split"></div>
+                    <div class="expenses-list">
+                        <span style="margin-bottom: 0.4rem; font-weight: bold; font-size: 1.25rem">Others</span>
+                        <span style="font-weight: bold">₹{{ expenses_amount[4] }}</span>
+                    </div>
+                </div>
+                <hr class="expenses-hori-split">
+                <div class="expenses-right-bottom">
+                    <div class="expenses-right-header">
+                        <h3>Last Transactions</h3>
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                    <div class="transact-header">
+                        <span class="date-header"><b>Date</b></span>
+                        <span class="transaction-header"><b>Transaction</b></span>
+                        <span class="type-header"><b>Type</b></span>
+                        <span class="amount-header"><b>Amount</b></span>
+                    </div>
+                    {% if expenses_list|length != 0 %}
+                    <div class="total-items">
+                        {% for i in expenses_list %}
+                        <div class="transact-item">
+                            <span class="date-header">{{ i.DATE }}</span>
+                            <span class="transaction-header">{{ i.EXPENSE }}</span>
+                            <div class="type-header">{{ i.EXPENSE_TYPE }}</div>
+                            <span class="amount-header">₹{{ i.AMOUNT }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div style="align-self: center; margin-top: 7rem">
+                        No Expenses Found. Add an expense to start tracking.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
